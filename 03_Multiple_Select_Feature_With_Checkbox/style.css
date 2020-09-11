@@ -1,0 +1,32 @@
+body{
+  background: white;
+  font-size: 19px;
+
+}
+
+.item{
+display: flex;
+align-items: center;
+margin-left: 50px;
+border: 2px solid;
+width: 360px
+}
+
+input[type="checkbox"]{
+  margin-right: 15px;
+  font-size: 25px;
+  border: 1px solid red;
+}
+
+input:checked + p{
+  text-decoration: line-through red;
+  tex
+}
+
+p{
+  border-left: 1px solid;
+  padding: 16px;
+  font-size: 16px;
+  margin: 0;
+  font-weight:bold;
+}
