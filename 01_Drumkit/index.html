@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="wiewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Bonaventure Chukwudi">
+  <meta name="description" content="My vannilla JS Drumkit">
+  <meta name="keywords" content="drumkit, vanilla js drumkit">
+  <title>Bonaventure Chukwudi JavaScript Drumkit</title>
+</head>
+
+<body>
+  <!-- The data-hook attribute can be anything. I set it myself-->
+<div class="hooks">
+  <div data-hook="81" class="hook">
+    <kbd>Q</kbd>
+    <span class="sound">Hard beat</span>
+  </div>
+
+  <div data-hook="87" class="hook">
+    <kbd>W</kbd>
+    <span class="sound">Trap</span>
+  </div>
+
+  <div data-hook="84" class="hook">
+    <kbd>T</kbd>
+    <span class="sound">Boom</span>
+  </div>
+
+  <div data-hook="89" class="hook">
+    <kbd>Y</kbd>
+    <span class="sound">clap</span>
+  </div>
+
+  <div data-hook="68" class="hook">
+    <kbd>D</kbd>
+    <span class="sound" >Fatty beat</span>
+  </div>
+
+  <div data-hook="70" class="hook">
+    <kbd>F</kbd>
+    <span class="sound">hihat</span>
+  </div>
+
+  <div data-hook="72" class="hook">
+    <kbd>H</kbd>
+    <span class="sound">Industrial organic</span>
+  </div>
+
+  <div data-hook="76" class="hook">
+    <kbd>L</kbd>
+    <span class="sound" >kick</span>
+  </div>
+
+  <div data-hook="90" class="hook">
+    <kbd>Z</kbd>
+    <span class="sound">Open Hat</span>
+  </div>
+
+ <div data-hook="88" class="hook">
+    <kbd>X</kbd>
+    <span class="sound">Ride</span>
+  </div>
+
+   <div data-hook="86" class="hook">
+    <kbd>V</kbd>
+    <span class="sound">Snare</span>
+  </div>
+
+   <div data-hook="78" class="hook">
+    <kbd>N</kbd>
+    <span class="sound">Tink</span>
+  </div>
+
+ <div data-hook="32" class="hook">
+    <kbd>Space</kbd>
+    <span class="sound">Tom</span>
+  </div>
+
+ <div data-hook="13" class="hook">
+    <kbd>Enter</kbd>
+    <span class="sound">Trap-bass</span>
+  </div>
+
+  <div data-hook="49" class="hook">
+    <kbd>1</kbd>
+    <span class="sound">NNe-ne</span>
+  </div>
+
+   <div data-hook="50" class="hook">
+    <kbd>2</kbd>
+    <span class="sound">Whatever</span>
+  </div>
+</div>
+
+<div>
+<audio data-hook="81" src="beats/Beats/Hard beat.wav"></audio>
+<audio data-hook="87" src="beats/Beats/Trap.wav"></audio>
+<audio data-hook="84" src="beats/Beats/boom.wav"></audio>
+<audio data-hook="89" src="beats/Beats/clap.wav"></audio>
+<audio data-hook="68" src="beats/Beats/fatty beat.wav"></audio>
+<audio data-hook="70" src="beats/Beats/hihat.wav"></audio>
+<audio data-hook="72" src="beats/Beats/industrial-organic-drums_.wav"></audio>
+<audio data-hook="76" src="beats/Beats/kick.wav"></audio>
+<audio data-hook="90" src="beats/Beats/openhat.wav"></audio>
+<audio data-hook="88" src="beats/Beats/ride.wav"></audio>
+<audio data-hook="86" src="beats/Beats/snare.wav"></audio>
+<audio data-hook="78" src="beats/Beats/tink.wav"></audio>
+<audio data-hook="32" src="beats/Beats/tom.wav"></audio>
+<audio data-hook="13" src="beats/Beats/trap-beat-808-bass-drum_130bpm_E.wav"></audio>
+<audio data-hook="49" src="https://sampleswap.org/samples-ghost/MELODIC%20SAMPLES/FLUTE/957[kb]big-reedy-flute-ethno-thing.wav.mp3"></audio>
+<audio data-hook="50" src="https://sampleswap.org/samples-ghost/MELODIC%20SAMPLES/GUITARS/969[kb]anthem-5ths.aif.mp3"></audio>
+</div>
+
+<script>
+  
+ //This function selects the particualar document and adds a class for its animation
+  function playSound(event) {
+    const audio = document.querySelector(`audio[data-hook="${event.keyCode}"]`);
+    const hook = document.querySelector(`div[data-hook="${event.keyCode}"]`);
+    if (!audio) return;
+    
+//This adds the class for the animation
+    hook.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+ }
+  
+//This function removes the class inorder to make the animation work.  
+  function removeTransition(event) {
+    if (event.propertyName !== 'transform') return;
+    event.target.classList.remove('playing');
+  }
+
+
+//This Function selcts all .hooks from the html
+  const hooks = Array.from(document.querySelectorAll('.hook'));
+  
+  //This calls it and adds the function removeTransition.
+  hooks.forEach(hook => hook.addEventListener('transitionend', removeTransition));
+  
+  //This adds the event Listener keydown
+  window.addEventListener('keydown', playSound);
+</script>
+
+</body>
+</html>
