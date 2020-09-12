@@ -1,0 +1,43 @@
+:root{
+  --radius: 0px;
+  --base: #ffc600;
+  --padding: 10px;
+  --blur: 0px;
+}
+
+img{
+  border-radius: var(--radius);
+  filter: blur(var(--blur));
+  padding: var(--padding);
+  background: var(--base);
+}
+
+.word{
+  color: var(--base);
+}
+
+body{
+  background-color: aliceblue;
+  text-align: center;
+}
+.controls{
+  display: grid;
+  text-align: center;
+  width: 50%;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  transform: translateX(50%);
+}
+
+
+
+
+label{
+  display: block;
+}
+
+.images{
+  margin-top: 50px;
+}
+
