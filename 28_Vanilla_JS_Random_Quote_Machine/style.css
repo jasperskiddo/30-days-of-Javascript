@@ -1,0 +1,39 @@
+html{
+  box-sizing: border-box;
+  font-size: 24px;
+}
+body {
+  background: #eee;
+  color: #323232;
+  margin: 0;
+  height: 100vh;
+}
+div{
+  display: flex;
+  flex-direction: column;
+   background: #e1ea54;
+  
+}
+.quotation{
+  text-align: center;
+  margin-bottom: 10vh;
+  background: #e1ea54;
+  height: 23vh;
+}
+.author{
+  text-align: right;
+  align-self: center;
+  margin-top: -10px;
+}
+input[type="button"]{
+  width: 150px;
+  height: 35px;
+  
+}
+.button{
+  margin-left: 10vw;;
+  position: relative;
+  top: 4vh;
+
+}
+

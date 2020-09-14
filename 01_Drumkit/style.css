@@ -1,0 +1,71 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  background: url("https://images.unsplash.com/photo-1597116635010-8b65f0dce76c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80");
+  background-size: cover;
+   background-clip: content-box;
+   background-attachment: fixed;
+   cursor: pointer;
+
+}
+
+.hooks{
+  display: grid;
+  grid-template-columns: 4.5em 4.5em 4.5em 4.5em;
+   grid-template-rows: 3em 3em 3em 3em;
+  grid-row-gap: 1.8em;
+  place-items: center;
+  justify-content: center;
+  overflow: auto;
+ }
+
+.hooks {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .1s ease-in;
+  width: auto;
+  height: auto;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 .5rem black;
+}
+
+.hook {
+  font-size: 1rem;
+  padding: 1rem .5rem;
+  transition: all 0.1s ease-in;
+  width: auto;
+  height: auto;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 .5rem black;
+}
+kbd {
+  display: block;
+  font-size: 3rem;
+}
+
+span{
+  font-size: 0.8em;
+}
+
+.sound {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #0ae5f5;
+}
+
+.playing {
+  transform: scale(1.03);
+  border: 0.1em inset #0ae5f5;
+  box-shadow: 0 0 0.01rem white;
+}

@@ -1,0 +1,82 @@
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+html{
+  box-sizing: border-box;
+  background: white;
+  font-size: 22px;
+  color: white;
+}
+
+body{
+    margin: 0;
+}
+
+.panels{
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.panel{
+  background: #eee;
+  text-align: center;
+   transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+.panel1{background-image: url("https://images.unsplash.com/photo-1597317220736-a948ea734c3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")}
+.panel2{background-image: url("https://images.unsplash.com/photo-1597415176337-a003a7efefa9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")}
+.panel3{background-image: url("https://images.unsplash.com/photo-1597497611926-4edc6be02786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")}
+.panel4{background-image: url("https://images.unsplash.com/photo-1597495736683-cd1e73fd6559?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")}
+.panel5{ background-image: url("https://images.unsplash.com/photo-1597441139259-441f74ea97d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")}
+
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .panel > *:first-child{
+      transform: translateY(-100%);
+}
+
+     .panel.open-active>*:first-child{
+      transform: translateY(0)
+    }
+  
+    .panel>*:last-child{
+      transform: translateY(100%)
+    }
+
+        .panel.open-active>*:last-child{
+      transform: translateY(0)
+    }
+        .panel p:nth-child(2) {
+      font-size: 2em;
+    }
+
+    .panel.open {
+      font-size: 40px;
+      flex: 5;
+    }
+
+        @media only screen and (max-width: 600px) {
+      .panel p {
+        font-size: 1em;
+      }
+    }
